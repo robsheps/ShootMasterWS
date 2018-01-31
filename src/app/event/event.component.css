@@ -1,0 +1,9 @@
+/* need this to make the select box the same height as input box*/
+select {
+  display: block;
+  padding: 3px 4px;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing:content-box;
+  box-sizing:content-box;
+  height: 18px;
+}

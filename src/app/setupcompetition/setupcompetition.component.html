@@ -1,0 +1,98 @@
+<div class="container">
+  <caption>
+    <h2>Setup</h2>
+  </caption>
+  <form>
+    <div class="col-xs-2">
+      <div class="form-group">
+        <label for="discipline">Discipline:</label>
+        <select class="form-control" id="discipline">
+          <option></option>
+          <option>Multi-Discipline</option>
+          <option>Skeet</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <select class="form-control" id="location">
+          <option></option>
+          <option>Ballarat</option>
+          <option>Bendigo</option>
+          <option>Benalla</option>
+          <option>Maryborough</option>
+          <option>Wagga Wagga</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="layouts" >No. Of Layouts:</label>
+        <input class="form-control" type = "number" id="layouts" placeholder="">
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="startDate">Start Date:</label>
+        <input class="form-control" type="date" id="startDate" placeholder="DD/MM/YYY"/>
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="endDate">End Date:</label>
+        <input class="form-control" type="date" id="endDate" placeholder="DD/MM/YYY"/>
+      </div>
+
+      <br>
+
+      <div style="float: left; display: block;">
+        <button type="button" class="btn btn-primary">Save <span class="glyphicon glyphicon-save"></span></button>
+        <button type="next" class="btn btn-primary" (click)="nextScreen()">Next <span class="glyphicon glyphicon-triangle-right"></span></button>
+      </div>
+    </div>
+
+    <div class="col-xs-2">
+      <div class="form-group">
+        <label for="managedBy">Managed By:</label>
+        <input type="email" class="form-control" id="managedBy" placeholder="">
+      </div>
+
+      <div class="form-group">
+        <label for="squadConfig">Squad Configuration:</label>
+        <select class="form-control" (click)="showInfo($event)" id="squadConfig">
+          <option></option>
+          <option>Random Squads</option>
+          <option>Identical Squads</option>
+          <option>Squad Rotation</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="waveConfig">Wave Configuration:</label>
+        <select class="form-control" (click)="showInfo($event)" id="waveConfig">
+          <option></option>
+          <option>No Wave Rotation</option>
+          <option>Rotate 1 Wave Up</option>
+          <option>Top And Tail</option>
+
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea class="form-control" id="comment" rows="4"></textarea>
+      </div>
+
+    </div>
+
+    <div class="col-xs-2">
+      <div class="form-group">
+        <div *ngIf="showSelected">
+          <h4 style="color:red;">SHOW SOMETHING</h4>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+
+
+
+
+
+
+

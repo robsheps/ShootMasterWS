@@ -1,0 +1,32 @@
+/*.top {*/
+  /*border-top: double;*/
+  /*border-color: black;*/
+/*}*/
+
+/*.bottom {*/
+  /*border-bottom: double;*/
+  /*!*border-bottom: double;*!*/
+  /*border-color: black;*/
+/*}*/
+
+/*.left {*/
+  /*border-left: thin solid;*/
+  /*border-color: black;*/
+/*}*/
+
+/*.right {*/
+  /*border-right: thin solid;*/
+  /*border-color: black;*/
+/*}*/
+
+
+
+/* need this to make the select box the same height as input box*/
+select {
+  display: block;
+  padding: 3px 4px;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing:content-box;
+  box-sizing:content-box;
+  height: 18px;
+}

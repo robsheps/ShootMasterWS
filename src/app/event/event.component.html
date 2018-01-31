@@ -1,0 +1,125 @@
+
+<div class="container">
+  <table class="table table-hover">
+    <caption>
+      <h2>Events
+      </h2>
+    </caption>
+    <thead>
+    <tr>
+      <th>
+        Number <br>Of <br>Targets
+      </th>
+      <th>
+        <div>Event</div>
+        <br>
+        <div></div>
+        <br>
+        <div></div>
+      </th>
+      <th>
+        Cost Of <br>Full <br>Noms
+      </th>
+      <th>
+        Cost Of <br>Reduced <br>Noms
+      </th>
+      <th>
+        Optional <br>GRADED <br>Pool
+      </th>
+      <th>
+        Optional <br>OVERALL <br>Pool
+      </th>
+      <th>
+        Optional <br>HIGH SCORE <br>Pool
+      </th>
+      <th>
+        Possible <br>Score
+        <div></div>
+        <br>
+        <div></div>
+      </th>
+      <th style="text-align:center">
+        <div></div>
+        <br>
+        <div></div>
+        <br>
+        <div></div>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+
+
+
+    <tr>
+      <td>
+        <input type="number" [(ngModel)]="numberOfTargets" id="numberOfTargets" min="0" max="500">
+      </td>
+      <td>
+        <select id="event" [(ngModel)]="event">
+          <option></option>
+          <option>Tgt Hcp</option>
+          <option>Tgt Mxd</option>
+        </select>
+      </td>
+      <td>
+        <input type="number" [(ngModel)]="costFullNoms" id="costFullNoms" min="0" max="100">
+      </td>
+      <td>
+        <input type="number" [(ngModel)]="costReducedNoms" id="costReducedNoms" min="0" max="100">
+      </td>
+      <td>
+        <input type="number" [(ngModel)]="optionalGradedPool" id="optionalGradedPool" min="0" max="100">
+      </td>
+      <td>
+        <input type="number" [(ngModel)]="optionalOverallPool" id="optionalOverallPool" min="0" max="100">
+      </td>
+      <td>
+        <input type="number" [(ngModel)]="optionalHighScorePool" id="optionalHighScorePool" min="0" max="100">
+      </td>
+      <td>
+        <input type="number" [(ngModel)]="possibleScore" id="possibleScore" min="0" max="1000">
+      </td>
+      <td>
+        <div class="btn-group" align="center" style="float: right; display: block;">
+          <button type="button" class="btn btn-primary btn-xs"  (click)="modifyRow()"><span class="glyphicon glyphicon-refresh"></span></button>
+        </div>
+      </td>
+    </tr>
+
+    <tr *ngFor="let event of events; let row_no = index" >
+      <td>{{event.numberOfTargets}}
+      </td>
+      <td>{{event.event}}
+      </td>
+      <td>{{event.costFullNoms | currency:'$'}}
+      </td>
+      <td>{{event.costReducedNoms | currency:'$'}}
+      </td>
+      <td>{{event.optionalGradedPool | currency:'$'}}
+      </td>
+      <td>{{event.optionalOverallPool | currency:'$'}}
+      </td>
+      <td>{{event.optionalHighScorePool | currency:'$'}}
+      </td>
+      <td>{{event.possibleScore}}
+      </td>
+      <td>
+        <div class="btn-group" align="center" style="float: right; display: block;">
+          <button type="button" class="btn btn-success btn-xs" (click)="selectRow(row_no)"><span class="glyphicon glyphicon-pencil"></span></button>
+          <button type="button" class="btn btn-danger btn-xs" (click)="deleteRow(row_no)"><span class="glyphicon glyphicon-remove"></span></button>
+        </div>
+      </td>
+
+    </tr>
+    </tbody>
+  </table>
+  <br>
+  <div style="float: left; display: block;">
+    <button type="button" class="btn btn-primary">Save <span class="glyphicon glyphicon-save"></span></button>
+    <button type="next" class="btn btn-primary" (click)="nextScreen()">Next <span class="glyphicon glyphicon-triangle-right"></span></button>
+  </div>
+
+</div>
+
+

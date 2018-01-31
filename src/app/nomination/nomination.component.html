@@ -1,0 +1,193 @@
+<div class="container">
+  <!--<table class="table table-bordered">-->
+  <table class="table table-hover">
+    <caption>
+      <h2>Nominations</h2>
+    </caption>
+    <thead>
+    <tr>
+      <th>
+        <div>ACTA</div>
+        <div>ID</div>
+      </th>
+      <th>
+        <div>Surname</div>
+        <br>
+        <div></div>
+      </th>
+      <th>
+        <div>Given Names</div>
+        <br>
+        <div></div>
+      </th>
+      <th>
+        <div>HCP</div>
+        <br>
+        <div></div>
+      </th>
+      <th>
+        <div>LVJ</div>
+        <br>
+        <div></div>
+      </th>
+      <th>
+        <div>HGG</div>
+        <br>
+        <div></div>
+      </th>
+      <th>
+        <div>State</div>
+        <div>Zone</div>
+      </th>
+      <th>
+        <div>Club</div>
+        <br>
+        <div></div>
+      </th>
+      <th>
+        <div>Age</div>
+        <br>
+        <div></div>
+      </th>
+      <th>
+        <div>Original</div>
+        <div>Squad</div>
+      </th>
+      <th>
+        <div>Team Name</div>
+        <div></div>
+      </th>
+      <th>
+        <div>Noms</div>
+        <div>Total</div>
+      </th>
+      <th>
+        <div>Noms</div>
+        <div>Paid</div>
+      </th>
+      <th style="text-align:center">
+        <div></div>
+        <br>
+        <div></div>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+
+
+    <tr>
+      <td>
+        <input type="text" [(ngModel)]="actaID" size="2" id="actaID">
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="surname" size="4" style="text-transform:uppercase" id="surname">
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="givenNames" id="givenNames" size="8">
+      </td>
+      <td>
+        <input type="number" [(ngModel)]="hcp" id="hcp" min="0" max="20">
+      </td>
+      <td>
+        <select id="lvj" [(ngModel)]="lvj">
+          <option></option>
+          <option>L</option>
+          <option>V</option>
+        </select>
+      </td>
+      <td>
+        <select id="hgg" [(ngModel)]="hgg">
+          <option></option>
+          <option>AA</option>
+          <option>A</option>
+          <option>B</option>
+        </select>
+      </td>
+      <td>
+        <select id="stateZone" [(ngModel)]="stateZone">
+          <option></option>
+          <option>NSW</option>
+          <option>NT</option>
+          <option>QLD</option>
+          <option>SA</option>
+          <option>TAS</option>
+          <option>VIC</option>
+          <option>WA</option>
+        </select>
+      </td>
+      <td>
+        <select id="club" [(ngModel)]="club">
+          <option></option>
+          <option>Ballarat</option>
+          <option>Cessnock</option>
+          <option>Lower North</option>
+          <option>Maryborough</option>
+          <option>Morwell</option>
+          <option>Top End</option>
+        </select>
+      </td>
+      <td>
+        <input type="number" [(ngModel)]="age" id="age" min="5" max="99">
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="origSquad" id="origSquad" size="1">
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="teamName" id="teamName" size="5">
+      </td>
+      <td>
+        <input type="number" [(ngModel)]="nomsTotal" id="nomsTotal" min="0" max="100">
+      </td>
+      <td>
+        <input type="number" [(ngModel)]="nomsPaid" id="nomsPaid" min="0" max="100">
+      </td>
+      <td>
+        <div class="btn-group" align="center" style="float: right; display: block;">
+          <button type="button" class="btn btn-primary btn-xs"  (click)="modifyRow()"><span class="glyphicon glyphicon-refresh"></span></button>
+        </div>
+      </td>
+    </tr>
+
+      <tr *ngFor="let nomination of nominations; let row_no = index">
+      <td>{{nomination.actaID}}
+      </td>
+      <td>{{nomination.surname.toUpperCase()}}
+      </td>
+      <td>{{nomination.givenNames}}
+      </td>
+      <td>{{nomination.hcp}}
+      </td>
+      <td>{{nomination.lvj.toUpperCase()}}
+      </td>
+      <td>{{nomination.hgg.toUpperCase()}}
+      </td>
+      <td>{{nomination.stateZone.toUpperCase()}}
+      </td>
+      <td>{{nomination.club}}
+      </td>
+      <td>{{nomination.age}}
+      </td>
+      <td>{{nomination.origSquad}}
+      </td>
+      <td>{{nomination.teamName}}
+      </td>
+      <td>{{nomination.nomsTotal | currency:'$'}}
+      </td>
+      <td>{{nomination.nomsPaid | currency:'$'}}
+      </td>
+      <td>
+        <div class="btn-group" align="center" style="float: right; display: block;">
+          <button type="button" class="btn btn-success btn-xs" (click)="selectRow(row_no)"><span class="glyphicon glyphicon-pencil"></span></button>
+          <button type="button" class="btn btn-danger btn-xs" (click)="deleteRow(row_no)"><span class="glyphicon glyphicon-remove"></span></button>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <br>
+  <div style="float: left; display: block;">
+    <button type="button" class="btn btn-primary">Save <span class="glyphicon glyphicon-save"></span></button>
+    <button type="next" class="btn btn-primary" (click)="nextScreen()">Next <span class="glyphicon glyphicon-triangle-right"></span></button>
+  </div>
+</div>
+
